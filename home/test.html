@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {font-family: "Lato", sans-serif;}
+
+.tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 25%;
+}
+
+.tablink:hover {
+    background-color: #777;
+}
+
+/* Style the tab content */
+.tabcontent {
+    color: white;
+    display: none;
+    padding: 50px;
+    text-align: center;
+}
+
+#Home {background-color:red;}
+#About {background-color:green;}
+#Account {background-color:blue;}
+#Contact {background-color:orange;}
+</style>
+</head>
+<body>
+
+<!--<p>Click on the buttons inside the tabbed menu:</p>-->
+
+<div id="Home" class="tabcontent">
+  <h3>Art Store</h3>
+  <p>Welcome to your one stop for all your need.</p>
+</div>
+
+<div id="About" class="tabcontent">
+  <h3>About Us</h3>
+  <p>Wanna know about us?</p> 
+</div>
+
+<div id="Account" class="tabcontent">
+  <h3>Account</h3>
+  <p>Get in your account.</p>
+</div>
+
+<div id="Contact" class="tabcontent">
+  <h3>Contact Us</h3>
+  <p>Need some help?</p>
+</div>
+
+<button class="tablink" onclick="openCity('Home', this, 'red')" id="defaultOpen">Home</button>
+<button class="tablink" onclick="openCity('About', this, 'green')">About</button>
+<button class="tablink" onclick="openCity('Account', this, 'blue')">Account</button>
+<button class="tablink" onclick="openCity('Contact', this, 'orange')">Contact</button>
+
+<script>
+function openCity(cityName,elmnt,color) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+    }
+    document.getElementById(cityName).style.display = "block";
+    elmnt.style.backgroundColor = color;
+
+}
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+     
+</body>
+</html> 
